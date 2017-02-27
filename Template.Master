@@ -1,0 +1,95 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Template.Master.cs" Inherits="cmsProject.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <nav class="navbar navbar-default nav--page">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">
+                  <asp:Repeater ID="RepeaterLogo" runat="server">
+                        <ItemTemplate>
+                           <img src="logo/<%# Eval("logo") %>" alt="logo" width="40" height="auto" style="margin-top:-10px;"/>  
+                        </ItemTemplate>
+                    </asp:Repeater>
+                
+              </a>
+            </div>
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                    <li><a href="http://localhost:60768/Editor.aspx">Edit page</a></li>
+                    </ul>
+               </div>
+             
+              <asp:Repeater ID="RepeaterName" runat="server">
+                        <ItemTemplate>
+                           <h5 class="pull-right"><%# Eval("name") %></h5>
+                        </ItemTemplate>
+                    </asp:Repeater>            
+          </div>
+        </nav>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolderHeader" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolderBody" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolderFooter" runat="server">
+
+        </asp:ContentPlaceHolder>
+
+        <br />
+        <br />
+        <div class="col-md-12 footer">
+            <div class="row">
+                <div class="col-md-4">
+          
+                <asp:Repeater ID="RepeaterTelephone" runat="server">
+                        <ItemTemplate>
+                            <h5>Contact info:</h5>
+                           <p>Phone: <b><%# Eval("telephone") %></b></p>
+                           <p>Email: mail@mail.com</p
+                        </ItemTemplate>
+                    </asp:Repeater> 
+                </div>
+             </div>
+                <div class="col-md-4">
+                    <h5>Lorem ipsum</h5>
+                    <p>link</p>
+                    <p>link</p>
+                    <p>link</p>
+                    <p>link</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Lorem ipsum</h5>
+                    <p>link</p>
+                    <p>link</p>
+                    <p>link</p>
+                    <p>link</p>
+                </div>
+               
+        </div>
+                      
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
